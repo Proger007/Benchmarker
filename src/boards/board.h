@@ -9,10 +9,8 @@ namespace board
 {
 void init();
 
-void disableICache();
-void enableICache();
-void disableDCache();
-void enableDCache();
+void disableCache();
+void enableCache();
 
 }
 

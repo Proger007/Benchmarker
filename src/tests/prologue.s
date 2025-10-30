@@ -1,0 +1,12 @@
+
+    PUSH {R4-R7}
+    MOVW R4, #0x55AA
+    MOVT R4, #0x55AA
+    MOVW R6, #0x1824
+    MOVT R6, #0x1824
+    MOVW R7, #0x4281
+    MOVT R7, #0x4281
+
+    MOV R4, R4
+    MOV R4, R4
+    MOV R4, R4

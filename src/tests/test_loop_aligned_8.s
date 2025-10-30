@@ -1,35 +1,34 @@
 .global  test_loop_aligned_8
 .text
+.syntax unified
 .align 4
+
 // *************************************************************************************************
 /// @fn
 // *************************************************************************************************
 test_loop_aligned_8:
     PUSH {R4-R7}
-    SUB SP, SP, #8
-    ADD R7, SP, #0
-    MOV R6, R0
     MOVW R4, #0x55AA
     MOVT R4, #0x55AA
-    STR R4, [R7]
-    MOV R5, #1
+    MOVW R6, #0x1824
+    MOVT R6, #0x1824
+    MOVW R7, #0x4281
+    MOVT R7, #0x4281
 
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
+    MOV R4, R4
+    MOV R4, R4
+    MOV R4, R4
     // Aligned to 128-bit line
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
-    ADD R7, R7, #0
 
+    MOV R4, R4
+    MOV R4, R4
+    MOV R4, R4
+    MOV R4, R4
 	.include "rcs_loop.s"
 
-    ADD SP, SP, #8
     POP {R4-R7}
+
+    MOV r0, r1
 
     BX LR
 

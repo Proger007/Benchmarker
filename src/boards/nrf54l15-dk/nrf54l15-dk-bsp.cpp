@@ -4,18 +4,21 @@
 
 #include "board.h"
 
-// class Rnd
-// {
-// private:
-//     int a;
-// public:
-//     explicit Rnd(const int a=1) : a(a) {}
-//     int operator()() const { return a; }
-// };
-//
-// Rnd rnd;
+#include <cstdint>
+
+auto ICACHE_S_ENABLE {reinterpret_cast<uint32_t*>(0xE0082404)};
 
 void board::init()
 {
 
+}
+
+void board::disableCache()
+{
+    *ICACHE_S_ENABLE = 0;
+}
+
+void board::enableCache()
+{
+    *ICACHE_S_ENABLE = 1;
 }
